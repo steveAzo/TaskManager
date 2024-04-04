@@ -10,23 +10,21 @@ const TaskController = require('../Controller/TaskController');
  *     description: Endpoint to create a new task.
  *     requestBody:
  *       required: true
- *       schema:
- *         type: object
- *         properties:
- *           title:
- *             type: string
- *             description: Title of the task.
- *           description:
- *             type: string
- *             description: Description of the task.
- *           dueDate:
- *             type: string
- *             format: date
- *             description: Due date of the task.
- *           status:
- *             type: string
- *             enum: ['pending', 'in_progress', 'completed']
- *             description: Status of the task.
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               description:
+ *                 type: string
+ *               dueDate:
+ *                 type: string
+ *                 format: date
+ *               status:
+ *                 type: string
+ *                 enum: ['pending', 'in_progress', 'completed']
  *     responses:
  *       '201':
  *         description: Task created successfully
@@ -34,6 +32,8 @@ const TaskController = require('../Controller/TaskController');
  *         description: Internal server error
  */
 router.post('/createTask', TaskController.createTask);
+console.log('POST /api/tasks/createTask endpoint registered');
+
 
 /**
  * @swagger
@@ -50,19 +50,21 @@ router.post('/createTask', TaskController.createTask);
  *           type: string
  *     requestBody:
  *       required: true
- *       schema:
- *         type: object
- *         properties:
- *           title:
- *             type: string
- *           description:
- *             type: string
- *           dueDate:
- *             type: string
- *             format: date
- *           status:
- *             type: string
- *             enum: ['pending', 'in_progress', 'completed']
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               description:
+ *                 type: string
+ *               dueDate:
+ *                 type: string
+ *                 format: date
+ *               status:
+ *                 type: string
+ *                 enum: ['pending', 'in_progress', 'completed']
  *     responses:
  *       '200':
  *         description: Task updated successfully
@@ -72,6 +74,7 @@ router.post('/createTask', TaskController.createTask);
  *         description: Internal server error
  */
 router.patch('/:taskId', TaskController.updateTask);
+console.log('PATCH /api/tasks/:taskId endpoint registered')
 
 /**
  * @swagger
