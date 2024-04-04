@@ -19,8 +19,6 @@ const updateTask = async (req, res) => {
     try {
         const { taskId } = req.params
         const updateDetails = req.body;
-        console.log("Received update request for task ID:", taskId);
-        console.log("Update details:", updateDetails);
         const result = await taskServices.updateTask(taskId, updateDetails);
         if (result.success) {
             console.log("Task updated successfully:", result.task);

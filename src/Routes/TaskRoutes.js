@@ -32,7 +32,6 @@ const TaskController = require('../Controller/TaskController');
  *         description: Internal server error
  */
 router.post('/createTask', TaskController.createTask);
-console.log('POST /api/tasks/createTask endpoint registered');
 
 
 /**
@@ -74,7 +73,6 @@ console.log('POST /api/tasks/createTask endpoint registered');
  *         description: Internal server error
  */
 router.patch('/:taskId', TaskController.updateTask);
-console.log('PATCH /api/tasks/:taskId endpoint registered')
 
 /**
  * @swagger
