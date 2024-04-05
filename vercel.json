@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/api-docs/(.*)",
+        "dest": "./src/Routes/TaskRoutes.js"
+      },
+      {
+        "src": "/api/(.*)",
+        "dest": "./index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "./index.js"
+      }
+    ]
+  }
+  
