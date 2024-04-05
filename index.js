@@ -8,7 +8,7 @@ const swaggerSpec = require('./swaggerConfig')
 
 const TaskRouter = require('./src/Routes/TaskRoutes')
 
-//dotenv.config()
+dotenv.config()
 
 const app = express()
 
